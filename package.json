@@ -1,0 +1,21 @@
+{
+  "name": "three",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "node app.js"
+  },
+  "author": "t2o0n321",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "three-gltf-loader": "^1.111.0",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "three": "^0.132.2"
+  }
+}
