@@ -1,4 +1,5 @@
 # MCDX.three
 
 # Use
-- npm start
+- Type ``npm start`` to open express server
+- Open the browser and you can access the page by 4000 port on localhost
