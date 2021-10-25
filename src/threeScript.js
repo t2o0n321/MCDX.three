@@ -12,22 +12,43 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
 const renderer = new THREE.WebGLRenderer()
 
 renderer.setSize(200, 200, false)
+            // renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.getElementsByClassName('threeCnvs')[0].appendChild(renderer.domElement)
 
-// GLFTloader
-var loader = new GLTFLoader()
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
 
-loader.load('./GLTF/wood_box/scene.gltf', (gltf)=>{
-    var wood_box = gltf.scene.children[0]
-    wood_box.scale.set(0.5, 0.5, 0.5)
-    scene.add(gltf.scene)
-    animate()
-})
+camera.position.z = 5;
+
+            const animate = function () {
+                requestAnimationFrame( animate );
+
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+
+                renderer.render( scene, camera );
+            };
+
+            animate();
+
+// renderer.render( scene, camera );
+
+// // GLFTloader
+// var loader = new GLTFLoader()
+
+// loader.load('./GLTF/wood_box/scene.gltf', (gltf)=>{
+//     var wood_box = gltf.scene.children[0]
+//     wood_box.scale.set(0.5, 0.5, 0.5)
+//     scene.add(gltf.scene)
+//     animate()
+// })
 
 
-function animate(){
-    renderer.render(scene, camera)
-    requestAnimationFrame(()=>{
-        animate()
-    })
-}
+// function animate(){
+//     renderer.render(scene, camera)
+//     requestAnimationFrame(()=>{
+//         animate()
+//     })
+// }
