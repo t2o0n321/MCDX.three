@@ -1,7 +1,0 @@
-language: nodejs
-
-berfore_script: 
-  - npm install
-
-script:
-  - npm start
